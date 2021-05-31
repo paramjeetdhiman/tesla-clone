@@ -36,12 +36,15 @@ export const Header = () => {
 };
 
 const Container = styled.div`
-  background-color: #e2e2e2;
   display: flex;
   min-height: 60px;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 `;
 const MenuGroup = styled.div`
   display: flex;
