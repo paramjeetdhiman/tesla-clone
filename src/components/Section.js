@@ -1,17 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Section = () => {
+export const Section = ({
+  title,
+  description,
+  bgImg,
+  leftBtnText,
+  rightBtnText,
+}) => {
   return (
-    <Container>
+    <Container bgImage={bgImg}>
       <ItemText>
-        <h1>Modal S</h1>
-        <p>Order online for Touchless Delivery</p>
+        <h1>{title}</h1>
+        <p>{description}</p>
       </ItemText>
 
       <ButtonGroup>
-        <LeftButton>Custom Order</LeftButton>
-        <RightButton>Existing Inventory</RightButton>
+        <LeftButton>{leftBtnText}</LeftButton>
+        <RightButton>{rightBtnText}</RightButton>
       </ButtonGroup>
       <DownArrow src="/images/down-arrow.svg" />
     </Container>
@@ -19,10 +25,11 @@ export const Section = () => {
 };
 
 const Container = styled.div`
-  background: blue;
+  background: #eee;
   width: 100%;
   height: 100vh;
-  background-image: url("/images/model-s.jpg");
+  background-image: ${(props) => `url('/images/${props.bgImage}')`};
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
